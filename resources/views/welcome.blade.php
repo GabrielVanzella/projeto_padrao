@@ -14,13 +14,13 @@
     <div class="container-fluid" id="grad1">
     <div class="row align-items-center">
         <div class="col">
-          One of three columns
+          teste
         </div>
         <div class="col">
-          One of three columns
+          teste
         </div>
         <div class="col">
-          One of three columns
+          teste
         </div>
       </div>
     </div>
