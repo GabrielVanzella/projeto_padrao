@@ -1,0 +1,46 @@
+version: '3.5'
+
+services:
+  padrao:
+    build:
+      context: '.'
+    container_name: padrao-app
+    ports:
+      - 80:80
+    volumes:
+      - .:/var/www/html/
+    networks:
+      - app
+
+  padrao-db:
+    image: mysql:8
+    tty: true
+    container_name: padrao-db
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=123
+      - MYSQL_DATABASE=${DB_DATABASE}
+      - MYSQL_USER=${DB_USERNAME}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+      - SERVICE_TAGS=dev
+      - SERVICE_NAME=mysql
+    networks:
+      - app
+
+  padrao-mail:
+    image: mailhog/mailhog:latest
+    container_name: padrao-mail
+    ports:
+      - "8125:8025"
+      - "2525:1025"
+    environment:
+      - MT_USER=mailtrap
+      - MT_PASSWD=mailtrap
+      - MT_MAILBOX_LIMIT=512000001
+      - MT_MESSAGE_LIMIT=102400001'
+    networks:
+      - app
+networks:
+  app:
+    driver: bridge
