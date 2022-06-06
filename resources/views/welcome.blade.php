@@ -14,13 +14,13 @@
     <div class="container-fluid" id="grad1">
     <div class="row align-items-center">
         <div class="col">
-          teste
+          testando uma nova branch
         </div>
         <div class="col">
-          teste
+          testando uma nova branch
         </div>
         <div class="col">
-          teste
+          testando uma nova branch
         </div>
       </div>
     </div>
